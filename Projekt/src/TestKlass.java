@@ -106,9 +106,10 @@ public class TestKlass {
             Scanner scan = new Scanner(System.in);
             System.out.print("Sisestage kuhu soovite käigu teha: ");
             int käik = scan.nextInt();
-            while(kasutajaKäigud.contains(käik) || arvutiKäigud.contains(käik))
-                System.out.println("See koht on juba võetud ");
+            while(kasutajaKäigud.contains(käik) || arvutiKäigud.contains(käik)) {
+                System.out.println("See koht on juba võetud. Sisestage uus number kuhu tahate käia.");
                 käik = scan.nextInt();
+            }
             kasutajaKäiguTegemine(mängulaud, käik);
             String tulemus = kesVõitis();
             if(tulemus.length() > 0){
@@ -116,8 +117,9 @@ public class TestKlass {
                 break;
             }
             int arvutiKäik = (int) (Math.random() * 9) + 1;
-            while(kasutajaKäigud.contains(arvutiKäik) || arvutiKäigud.contains(arvutiKäik))
+            while(kasutajaKäigud.contains(arvutiKäik) || arvutiKäigud.contains(arvutiKäik)) {
                 arvutiKäik = (int) (Math.random() * 9) + 1;
+            }
             arvutiKäiguTegemine(mängulaud, arvutiKäik);
             tulemus = kesVõitis();
             if(tulemus.length() > 0){
