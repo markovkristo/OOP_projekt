@@ -5,10 +5,14 @@ import java.util.List;
 public class Mängulaud extends TripsTrapsTrull {
     private char[][] laud;
 
+    // Mängulaua konstruktor
     public Mängulaud(char[][] laud) {
         this.laud = laud;
     }
 
+    // Mängulaua moodustamiseks vajalik meetod, kus on kasutatud topelt for-tsüklit.
+    // Esimene for-tsükkel võtab mängulaua rea ning teine for-tsükkel teeb sellele vastava veeru.
+    // Parameetriks võtab laua maatriksi, mis on defineeritud peameetodis.
     public static void moodustaMängulaud(char[][] laud) {
 
         for (char[] rida : laud) {
@@ -18,6 +22,8 @@ public class Mängulaud extends TripsTrapsTrull {
             System.out.println();
         }
     }
+
+    //Meetod, mis otsustab, kes mängu võitis.
     public static String kesVõitis() {
         // Võiduvõimalused
         List ülemineRida = Arrays.asList(1, 2, 3);
@@ -38,14 +44,14 @@ public class Mängulaud extends TripsTrapsTrull {
         võiduvõimalused.add(paremVeerg);
         võiduvõimalused.add(diagonaal1);
         võiduvõimalused.add(diagonaal2);
-        // Käin Võiduvõimaluste list-i läbi ning vaatan, et kas kasutaja või arvuti käikude seas on võiduvõimalus,
-        // kui pole ning arvuti ja kasutaja käikude listi suurus on liites üheksa siis on viik.
+        // Käime võiduvõimaluste list-i läbi ning vaatame, kas kasutajakäikude list-is või arvutikäikude list-is on võiduvõimalus,
+        // kui pole ning arvuti ja kasutaja käikude listi suurus on kokku liites üheksa siis on viik.
         for (List järjend : võiduvõimalused) {
             if (Kasutaja.kasutajaKäigud.containsAll(järjend))
                 return "Sina võitsid";
             else if (Arvuti.arvutiKäigud.containsAll(järjend))
                 return "Arvuti võitis";
-            else if (Kasutaja.kasutajaKäigud.size()+Arvuti.arvutiKäigud.size() == 9)
+            else if (Kasutaja.kasutajaKäigud.size() + Arvuti.arvutiKäigud.size() == 9)
                 return "Viik";
         }
         return "";

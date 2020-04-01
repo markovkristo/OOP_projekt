@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class TripsTrapsTrull {
 
-    // Teen globaalsed list-id, kasutajale ja arvutile, et kõik meeetodid saaksid neid kasutada.
     public static void main(String[] args) {
         char[][] laud = {{'1', '|', '2', '|', '3'},
                 {'-', '+', '-', '+', '-'},
