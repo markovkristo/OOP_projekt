@@ -59,4 +59,5 @@ public class Mängulaud extends TripsTrapsTrull {
         }
         return "";
     }
+
 }
