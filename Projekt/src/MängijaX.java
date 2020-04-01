@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class Kasutaja extends TripsTrapsTrull {
+public class MängijaX extends TripsTrapsTrull {
     // Teen globaalsed listi kasutajale, kuhu ta salvestab arvuti tehtud käigud.
-    static ArrayList<Integer> kasutajaKäigud = new ArrayList<Integer>();
+    static ArrayList<Integer> mängija_x_Käigud = new ArrayList<Integer>();
 
     // Kasutame palju erinevaid if-tingimuslauseid, mis kontrollib kuhu kasutaja käigu tegi ning asendab mängulaual oleva numbri tähega "x".
-    public static void kasutajaKäiguTegemine(char[][] mängulaud, int käik) {
-        kasutajaKäigud.add(käik);
+    public static void mängija_x_KäiguTegemine(char[][] mängulaud, int käik) {
+        mängija_x_Käigud.add(käik);
         if (käik == 1)
             mängulaud[0][0] = 'x';  // Esimene indeks näitab mängulaua rida ning teine indeks näitab veergu kuhu tahetakse oma käik teha.
         else if (käik == 2)
