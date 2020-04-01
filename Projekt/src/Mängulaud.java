@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Mängulaud extends TripsTrapsTrull {
-    private char[][] laud;
+    private static char[][] laud;
 
     // Mängulaua konstruktor
     public Mängulaud(char[][] laud) {
@@ -47,12 +47,24 @@ public class Mängulaud extends TripsTrapsTrull {
         // Käime võiduvõimaluste list-i läbi ning vaatame, kas kasutajakäikude list-is või arvutikäikude list-is on võiduvõimalus,
         // kui pole ning arvuti ja kasutaja käikude listi suurus on kokku liites üheksa siis on viik.
         for (List järjend : võiduvõimalused) {
+
             if (Kasutaja.kasutajaKäigud.containsAll(järjend))
                 return "Sina võitsid seisuga: ";
             else if (Arvuti.arvutiKäigud.containsAll(järjend))
                 return "Arvuti võitis seisuga: ";
             else if (Kasutaja.kasutajaKäigud.size() + Arvuti.arvutiKäigud.size() == 9)
                 return "Viik";
+
+            if (Kasutaja.kasutajaKäigud.containsAll(järjend)) {
+                Mängulaud.moodustaMängulaud(laud);
+                return "Sina võitsid";
+            } else if (Arvuti.arvutiKäigud.containsAll(järjend)) {
+                Mängulaud.moodustaMängulaud(laud);
+                return "Arvuti võitis";
+            } else if (Kasutaja.kasutajaKäigud.size() + Arvuti.arvutiKäigud.size() == 9) {
+                Mängulaud.moodustaMängulaud(laud);
+                return "Viik";
+            }
         }
         return "";
     }

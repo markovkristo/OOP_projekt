@@ -12,18 +12,22 @@ public class TripsTrapsTrull {
 
         // Mängulaua loomine
         Mängulaud mängulaud = new Mängulaud(laud);
-        Mängulaud.moodustaMängulaud(laud);
+
         // Kasutame while tsüklit, et kõik kestab nii kaua kuni kõik on tõene.
         while (true) {
 
+
             // Scanner selleks, et kasutaja saaks sisestada enda käigu kuhu soovib käia
+
+            Mängulaud.moodustaMängulaud(laud);
+
             Scanner scan = new Scanner(System.in);
             System.out.print("Käigu tegemiseks sisestage number vahemikus 1-9: ");
             int käik = scan.nextInt();
             System.out.println();
 
             // While-tsükkel, millega kontrollitakse, et sisestatud käiku poleks juba tehtud ning, et käik kuuluks ikka 1-9-ni.
-            while (Kasutaja.kasutajaKäigud.contains(käik) || Arvuti.arvutiKäigud.contains(käik) || käik < 1 || käik >9) {
+            while (Kasutaja.kasutajaKäigud.contains(käik) || Arvuti.arvutiKäigud.contains(käik) || käik < 1 || käik > 9) {
                 System.out.println("See koht on juba võetud või ei kuulu antud vahemikku 1-9. Sisestage uus number kuhu tahate käia.");
                 käik = scan.nextInt();
             }
@@ -53,8 +57,8 @@ public class TripsTrapsTrull {
                 System.out.println(tulemus);
                 break;
             }
-            Mängulaud.moodustaMängulaud(laud);
             System.out.println(tulemus);
         }
+        Mängulaud.moodustaMängulaud(laud);
     }
 }
