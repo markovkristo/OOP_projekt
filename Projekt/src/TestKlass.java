@@ -5,15 +5,8 @@ import java.util.List;
 
 public class TestKlass {
 
-    public static void moodustaMängulaud(char[][] mängulaud) {
 
-        for (char[] rida : mängulaud) {
-            for (char tähis : rida) {
-                System.out.print(tähis);
-            }
-            System.out.println();
-        }
-    }
+
 
     public static void kasutajaKäiguTegemine(char[][] mängulaud, int käik) {
         kasutajaKäigud.add(käik);
@@ -96,12 +89,12 @@ public class TestKlass {
     static ArrayList<Integer> arvutiKäigud = new ArrayList<Integer>();
 
     public static void main(String[] args) {
-
-        char[][] mängulaud = {{' ', '|', ' ', '|', ' '},
-                {'-', '+', '-', '+', '-'},
-                {' ', '|', ' ', '|', ' '},
-                {'-', '+', '-', '+', '-'},
-                {' ', '|', ' ', '|', ' '}};
+                char[][] laud = {{'1', '|', '2', '|', '3'},
+                        {'-', '+', '-', '+', '-'},
+                        {'4', '|', '5', '|', '6'},
+                        {'-', '+', '-', '+', '-'},
+                        {'7', '|', '8', '|', '9'}};
+        Mängulaud mängulaud = new Mängulaud(laud);
         while (true) {
             Scanner scan = new Scanner(System.in);
             System.out.print("Sisestage kuhu soovite käigu teha: ");
@@ -110,7 +103,7 @@ public class TestKlass {
                 System.out.println("See koht on juba võetud. Sisestage uus number kuhu tahate käia.");
                 käik = scan.nextInt();
             }
-            kasutajaKäiguTegemine(mängulaud, käik);
+            kasutajaKäiguTegemine(laud, käik);
             String tulemus = kesVõitis();
             if(tulemus.length() > 0){
                 System.out.println(tulemus);
@@ -120,13 +113,13 @@ public class TestKlass {
             while(kasutajaKäigud.contains(arvutiKäik) || arvutiKäigud.contains(arvutiKäik)) {
                 arvutiKäik = (int) (Math.random() * 9) + 1;
             }
-            arvutiKäiguTegemine(mängulaud, arvutiKäik);
+            arvutiKäiguTegemine(laud, arvutiKäik);
             tulemus = kesVõitis();
             if(tulemus.length() > 0){
                 System.out.println(tulemus);
                 break;
             }
-            moodustaMängulaud(mängulaud);
+            Mängulaud.moodustaMängulaud(laud);
             System.out.println(tulemus);
         }
     }
