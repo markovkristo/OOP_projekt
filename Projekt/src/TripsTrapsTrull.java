@@ -12,7 +12,7 @@ public class TripsTrapsTrull {
 
         // Mängulaua loomine
         Mängulaud mängulaud = new Mängulaud(laud);
-        Mängulaud.moodustaMängulaud(laud);
+
         // Kasutame while tsüklit, et kõik kestab nii kaua kuni kõik on tõene.
         while (true) {
             Mängulaud.moodustaMängulaud(laud);
