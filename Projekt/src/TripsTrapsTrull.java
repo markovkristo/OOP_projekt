@@ -10,6 +10,7 @@ public class TripsTrapsTrull {
                 {'7', '|', '8', '|', '9'}};
         Mängulaud mängulaud = new Mängulaud(laud);
         while (true) {
+            Mängulaud.moodustaMängulaud(laud);
             Scanner scan = new Scanner(System.in);
             System.out.print("Sisestage kuhu soovite käigu teha: ");
             int käik = scan.nextInt();
@@ -33,7 +34,6 @@ public class TripsTrapsTrull {
                 System.out.println(tulemus);
                 break;
             }
-            Mängulaud.moodustaMängulaud(laud);
             System.out.println(tulemus);
         }
     }
