@@ -83,7 +83,7 @@ public class TripsTrapsTrull {
              if ("Sõber".equals(variant)) {
                 Mängulaud.moodustaMängulaud(laud);
 
-                // Scanner, et küsida teiselt mängijalt kuhu tahab käia
+                // Scanner, et küsida teiselt mängijalt kuhu tahab käia.
                 Scanner scan2 = new Scanner(System.in);
                 System.out.print("Mängija o. Käigu tegemiseks sisestage number vahemikus 1-9: ");
                 int käikO = scan.nextInt();
