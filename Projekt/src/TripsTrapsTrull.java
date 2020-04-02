@@ -81,7 +81,7 @@ public class TripsTrapsTrull {
 
             // Kasutame if tingimuslauset, et vaadata, kas soovitakse mängida sõbraga koos.
              if ("Sõber".equals(variant)) {
-                Mängulaud.moodustaMängulaud(laud);
+
 
                 // Scanner, et küsida teiselt mängijalt kuhu tahab käia.
                 Scanner scan2 = new Scanner(System.in);
