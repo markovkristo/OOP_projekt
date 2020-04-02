@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//Mängu põhiklass. Siin käivitatakse eelnevalt valminud meetodid, et mäng tööle läheks. Klassi on vaja, sest selles pannakse kõik teised klassid ja meetodid kokku, mistõttu selle klassita kogu programm ei töötaks.
 public class TripsTrapsTrull {
 
     public static void main(String[] args) {
