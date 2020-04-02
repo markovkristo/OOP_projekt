@@ -49,12 +49,15 @@ public class Mängulaud extends TripsTrapsTrull {
         // kui pole ning arvuti ja kasutaja käikude listi suurus on kokku liites üheksa siis on viik.
         for (List järjend : võiduvõimalused) {
 
-            if (MängijaX .mängija_x_Käigud.containsAll(järjend))
-                return "Mängija X võitis. ";
-            else if (MängijaO.mängija_o_Käigud.containsAll(järjend))
-                return "Mängija O võitis. ";
-            else if (MängijaX .mängija_x_Käigud.size() + MängijaO.mängija_o_Käigud.size() == 9)
-                return "Mäng jäi viiki.";
+            if (MängijaX .mängija_x_Käigud.containsAll(järjend)){
+                Mängulaud.moodustaMängulaud(laud);
+                return "Mängija X võitis. ";}
+            else if (MängijaO.mängija_o_Käigud.containsAll(järjend)){
+                Mängulaud.moodustaMängulaud(laud);
+                return "Mängija O võitis. ";}
+            else if (MängijaX .mängija_x_Käigud.size() + MängijaO.mängija_o_Käigud.size() == 9){
+                Mängulaud.moodustaMängulaud(laud);
+                return "Mäng jäi viiki.";}
         }
         return "";
     }

@@ -104,6 +104,7 @@ public class TripsTrapsTrull {
                     System.out.println(tulemus);
                     break;
                 }
+
                 System.out.println(tulemus);
             }
         }
