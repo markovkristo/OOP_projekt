@@ -18,6 +18,9 @@ public class TripsTrapsTrull {
         System.out.println("Sisestage, kas soovite mängida arvuti vastu või sõbraga koos. Arvuti vastu mängimiseks kirjutage 'Arvuti'.");
         System.out.print("Sõbra vastu mängimiseks kirjutage 'Sõber': ");
 
+
+        // Loetakse sisse ning while- tsükliga kontrollitakse, kas soovitav variant on õigesti sisestatud, kui ei ole,
+        // küsib nii kaua uuesti kuni sisestatakase õigesti.
         String variant = scanVariant.nextLine();
         while (!"Arvuti".equals(variant) && !"Sõber".equals(variant)) {
             System.out.print("Sisestasite valesti. Peate sisestama sõnasõnalt ning suure tähega (ilma ülakomadeta) 'Arvuti' või 'Sõber': ");
@@ -27,6 +30,7 @@ public class TripsTrapsTrull {
         System.out.println();
         System.out.println("Mängulaud on meil selline: ");
         Mängulaud.moodustaMängulaud(laud);
+
         // Kasutame while tsüklit, et kõik kestab nii kaua kuni kõik on tõene.
         while (true) {
 
@@ -52,7 +56,7 @@ public class TripsTrapsTrull {
                 break;
             }
 
-            // Kasutame if tingimuslauset, et vaadata, kuidas soovitakse mängida.
+            // Kasutame if tingimuslauset, et vaadata, kas soovitakse mängida arvuti vastu.
             if ("Arvuti".equals(variant)) {
                 // Arvuti käigu genereerimine randomi abil.
                 int arvutiKäik = (int) (Math.random() * 9) + 1;
@@ -74,15 +78,25 @@ public class TripsTrapsTrull {
 
             }
             Mängulaud.moodustaMängulaud(laud);
+
+            // Kasutame if tingimuslauset, et vaadata, kas soovitakse mängida sõbraga koos.
              if ("Sõber".equals(variant)) {
                 Mängulaud.moodustaMängulaud(laud);
+
+                // Scanner, et küsida teiselt mängijalt kuhu tahab käia
                 Scanner scan2 = new Scanner(System.in);
                 System.out.print("Mängija o. Käigu tegemiseks sisestage number vahemikus 1-9: ");
                 int käikO = scan.nextInt();
+
+                // Kontroll, et sisestatud kõik kuuluks õigesse vahemikku ning ega seda käiku pole juba tehtud.
+                 // Kui tehtud käik ei sobi, siis küsib uuesti, nii kaua kuni sisestatakse sobiv käik.
                 while (MängijaX.mängija_x_Käigud.contains(käikO) || MängijaO.mängija_o_Käigud.contains(käikO) || käikO < 1 || käikO > 9) {
                     System.out.print("See koht on juba võetud või ei kuulu antud vahemikku 1-9. Sisestage uus number kuhu tahate käia: ");
                     käikO = scan.nextInt();
                 }
+
+                 // Sisestatud käigu lisamine mängulauale ning peale seda tehakse kontroll, kas mängija2 poolt
+                 // tehtud käigud on mängu võitnud või ei.
                 MängijaO.mängija_o_KäiguTegemine(laud, käikO);
                 Mängulaud.moodustaMängulaud(laud);
                 tulemus = Mängulaud.kesVõitis();
