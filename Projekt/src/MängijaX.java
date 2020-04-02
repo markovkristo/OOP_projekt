@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+//Mängija X klass. Klass võtab sisse kasutaja sisestuse ja väljastab vastavasse kohta mängijaX käigu. Klass on vajalik, et saada mängija sisestusi, mis on tarvilikud mängu jaoks.
 public class MängijaX extends TripsTrapsTrull {
     // Teen globaalsed listi kasutajale, kuhu ta salvestab arvuti tehtud käigud.
     static ArrayList<Integer> mängija_x_Käigud = new ArrayList<Integer>();

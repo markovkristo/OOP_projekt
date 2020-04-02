@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+//Mängulaua klass. Võtab argumendiks kahekordse järjendi (3x3), millest valmistab mängulaua. Lisaks kontrollib võiduvõimalused üle ning mängu lõpus väljastab, kes võitis.
+//Klass on vajalik, kuna mängul peab olema mängulaud ning ka viis määrata võitja.
 public class Mängulaud extends TripsTrapsTrull {
     private static char[][] laud;
 

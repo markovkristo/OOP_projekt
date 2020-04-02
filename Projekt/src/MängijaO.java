@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-
+//Mängija O klass. Sõltuvalt mängualgsest otsusest, kas mängitakse arvuti vastu või sõbra vastu, väljastab klass, kas teise mängija sisestuse või siis arvuti poolt valitud sisestuse.
+//Klass on vajalik, et saada teise mängija sisestused või lasta arvutil valida oma siestuse, et esimesel mängijal oleks ka vastanae.
 public class MängijaO extends TripsTrapsTrull {
     // Teen globaalsed list-i arvutile, kuhu ta salvestab arvuti tehtud käigud.
     static ArrayList<Integer> mängija_o_Käigud = new ArrayList<Integer>();
